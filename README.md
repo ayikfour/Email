@@ -1,4 +1,12 @@
 # Email
-Project PPK mail
+# Bunifu (Visual tweak)
 
-Install <a href="">Bunifu UI</a>
+Install Bunifu_UI_v1.5.3.dll
+
+  - Tab reference
+  - Install reference
+  - Browse Bunifu_UI_v1.5.3.dll
+
+# SQL
+
+Mail.sql
