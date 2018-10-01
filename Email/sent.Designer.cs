@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.DelMail = new System.Windows.Forms.Button();
-            this.ListInbox = new System.Windows.Forms.ListView();
+            this.ListOutbox = new System.Windows.Forms.ListView();
+            this.ColID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColRecipient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // DelMail
@@ -51,40 +51,46 @@
             this.DelMail.Text = "Delete";
             this.DelMail.UseVisualStyleBackColor = false;
             // 
-            // ListInbox
+            // ListOutbox
             // 
-            this.ListInbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.ListInbox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ListOutbox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ListOutbox.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColID,
             this.ColRecipient,
             this.ColSubject,
-            this.ColMessage,
-            this.ColTime});
-            this.ListInbox.Font = new System.Drawing.Font("Muli", 8F);
-            this.ListInbox.Location = new System.Drawing.Point(6, 3);
-            this.ListInbox.Name = "ListInbox";
-            this.ListInbox.Size = new System.Drawing.Size(615, 328);
-            this.ListInbox.TabIndex = 9;
-            this.ListInbox.UseCompatibleStateImageBehavior = false;
-            this.ListInbox.View = System.Windows.Forms.View.Details;
+            this.ColMessage});
+            this.ListOutbox.Font = new System.Drawing.Font("Muli", 8F);
+            this.ListOutbox.FullRowSelect = true;
+            this.ListOutbox.Location = new System.Drawing.Point(6, 3);
+            this.ListOutbox.MultiSelect = false;
+            this.ListOutbox.Name = "ListOutbox";
+            this.ListOutbox.Size = new System.Drawing.Size(615, 328);
+            this.ListOutbox.TabIndex = 9;
+            this.ListOutbox.UseCompatibleStateImageBehavior = false;
+            this.ListOutbox.View = System.Windows.Forms.View.Details;
+            this.ListOutbox.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListOutbox_ColumnWidthChanging);
+            this.ListOutbox.SelectedIndexChanged += new System.EventHandler(this.ListOutbox_SelectedIndexChanged);
+            this.ListOutbox.DoubleClick += new System.EventHandler(this.ListOutbox_DoubleClick);
+            // 
+            // ColID
+            // 
+            this.ColID.Text = "ID";
+            this.ColID.Width = 0;
             // 
             // ColRecipient
             // 
             this.ColRecipient.Text = "Recipient";
-            this.ColRecipient.Width = 100;
+            this.ColRecipient.Width = 80;
             // 
             // ColSubject
             // 
             this.ColSubject.Text = "Subject";
-            this.ColSubject.Width = 62;
+            this.ColSubject.Width = 80;
             // 
             // ColMessage
             // 
             this.ColMessage.Text = "Message";
-            this.ColMessage.Width = 382;
-            // 
-            // ColTime
-            // 
-            this.ColTime.Text = "Time";
+            this.ColMessage.Width = 450;
             // 
             // sent
             // 
@@ -92,7 +98,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.DelMail);
-            this.Controls.Add(this.ListInbox);
+            this.Controls.Add(this.ListOutbox);
             this.Name = "sent";
             this.Size = new System.Drawing.Size(624, 397);
             this.ResumeLayout(false);
@@ -102,10 +108,10 @@
         #endregion
 
         private System.Windows.Forms.Button DelMail;
-        private System.Windows.Forms.ListView ListInbox;
+        private System.Windows.Forms.ListView ListOutbox;
         private System.Windows.Forms.ColumnHeader ColSubject;
         private System.Windows.Forms.ColumnHeader ColMessage;
-        private System.Windows.Forms.ColumnHeader ColTime;
         private System.Windows.Forms.ColumnHeader ColRecipient;
+        private System.Windows.Forms.ColumnHeader ColID;
     }
 }

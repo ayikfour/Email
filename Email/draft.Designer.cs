@@ -30,10 +30,10 @@
         {
             this.BtnDelete = new System.Windows.Forms.Button();
             this.ListDraft = new System.Windows.Forms.ListView();
+            this.ColID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColRecipient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,36 +56,42 @@
             // 
             this.ListDraft.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListDraft.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColID,
             this.ColRecipient,
             this.ColSubject,
-            this.ColMessage,
-            this.ColTime});
+            this.ColMessage});
             this.ListDraft.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListDraft.FullRowSelect = true;
             this.ListDraft.Location = new System.Drawing.Point(6, 3);
+            this.ListDraft.MultiSelect = false;
             this.ListDraft.Name = "ListDraft";
             this.ListDraft.Size = new System.Drawing.Size(615, 328);
             this.ListDraft.TabIndex = 11;
             this.ListDraft.UseCompatibleStateImageBehavior = false;
             this.ListDraft.View = System.Windows.Forms.View.Details;
+            this.ListDraft.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListDraft_ColumnWidthChanging);
+            this.ListDraft.SelectedIndexChanged += new System.EventHandler(this.ListDraft_SelectedIndexChanged);
+            this.ListDraft.DoubleClick += new System.EventHandler(this.ListDraft_DoubleClick);
+            // 
+            // ColID
+            // 
+            this.ColID.Text = "ID";
+            this.ColID.Width = 0;
             // 
             // ColRecipient
             // 
             this.ColRecipient.Text = "Recipient";
-            this.ColRecipient.Width = 100;
+            this.ColRecipient.Width = 80;
             // 
             // ColSubject
             // 
             this.ColSubject.Text = "Subject";
-            this.ColSubject.Width = 62;
+            this.ColSubject.Width = 80;
             // 
             // ColMessage
             // 
             this.ColMessage.Text = "Message";
-            this.ColMessage.Width = 387;
-            // 
-            // ColTime
-            // 
-            this.ColTime.Text = "Time";
+            this.ColMessage.Width = 450;
             // 
             // BtnSend
             // 
@@ -120,10 +126,10 @@
 
         private System.Windows.Forms.Button BtnDelete;
         private System.Windows.Forms.ListView ListDraft;
-        private System.Windows.Forms.ColumnHeader ColRecipient;
         private System.Windows.Forms.ColumnHeader ColSubject;
         private System.Windows.Forms.ColumnHeader ColMessage;
-        private System.Windows.Forms.ColumnHeader ColTime;
         private System.Windows.Forms.Button BtnSend;
+        private System.Windows.Forms.ColumnHeader ColID;
+        private System.Windows.Forms.ColumnHeader ColRecipient;
     }
 }

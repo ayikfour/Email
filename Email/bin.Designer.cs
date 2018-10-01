@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             this.ListBin = new System.Windows.Forms.ListView();
+            this.ColID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ColPlaceholder = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColRecipient = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColSubject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ColMessage = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ColTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BtnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -40,10 +41,11 @@
             // 
             this.ListBin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ListBin.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ColID,
+            this.ColPlaceholder,
             this.ColRecipient,
             this.ColSubject,
-            this.ColMessage,
-            this.ColTime});
+            this.ColMessage});
             this.ListBin.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ListBin.Location = new System.Drawing.Point(6, 3);
             this.ListBin.Name = "ListBin";
@@ -51,25 +53,32 @@
             this.ListBin.TabIndex = 12;
             this.ListBin.UseCompatibleStateImageBehavior = false;
             this.ListBin.View = System.Windows.Forms.View.Details;
+            this.ListBin.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.ListBin_ColumnWidthChanging);
+            this.ListBin.SelectedIndexChanged += new System.EventHandler(this.ListBin_SelectedIndexChanged);
+            // 
+            // ColID
+            // 
+            this.ColID.Text = "ID";
+            this.ColID.Width = 0;
+            // 
+            // ColPlaceholder
+            // 
+            this.ColPlaceholder.Text = "Type";
             // 
             // ColRecipient
             // 
             this.ColRecipient.Text = "Recipient";
-            this.ColRecipient.Width = 100;
+            this.ColRecipient.Width = 80;
             // 
             // ColSubject
             // 
             this.ColSubject.Text = "Subject";
-            this.ColSubject.Width = 62;
+            this.ColSubject.Width = 80;
             // 
             // ColMessage
             // 
             this.ColMessage.Text = "Message";
-            this.ColMessage.Width = 387;
-            // 
-            // ColTime
-            // 
-            this.ColTime.Text = "Time";
+            this.ColMessage.Width = 450;
             // 
             // BtnDelete
             // 
@@ -105,7 +114,8 @@
         private System.Windows.Forms.ColumnHeader ColRecipient;
         private System.Windows.Forms.ColumnHeader ColSubject;
         private System.Windows.Forms.ColumnHeader ColMessage;
-        private System.Windows.Forms.ColumnHeader ColTime;
         private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.ColumnHeader ColID;
+        private System.Windows.Forms.ColumnHeader ColPlaceholder;
     }
 }

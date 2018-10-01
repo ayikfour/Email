@@ -13,29 +13,20 @@ namespace Email
 {
     public partial class inbox : UserControl
     {
-        //Database
-        static String ConnectionInfo = "datasource=localhost; port=3306; username=root; password=; database=mail; SslMode=none";
-        MySqlConnection Connect = new MySqlConnection(ConnectionInfo);
+        //Database        
+        MySqlConnection Connect = new MySqlConnection(MainForm.Connection);
         MySqlCommand Command;
         MySqlDataReader Reader;
 
         //Variables
         int IDinbox;
-
+        int[] IDinboxMultiple;
+        Mail ParentMail;
+        
         public inbox()
         {
-            InitializeComponent();
+            InitializeComponent();            
             UpdateInbox();
-        }
-
-        private void ListInbox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (ListInbox.SelectedItems.Count == 0)
-            {
-                return;
-            }
-            ListViewItem items = ListInbox.SelectedItems[0];
-            IDinbox = int.Parse(items.SubItems[0].Text);            
         }
 
         public void UpdateInbox()
@@ -44,9 +35,15 @@ namespace Email
 
             try
             {
-                String query = "SELECT * FROM sent WHERE recipient='"+MainForm.Email+"'";
+                //Declaring Query
+                String query = "SELECT * FROM inbox WHERE recipient=@recipient";
+
+                //Declaring parameters of the query
                 Command = new MySqlCommand(query, Connect);
+                Command.Parameters.AddWithValue("@recipient", MainForm.Email);                
                 Command.CommandTimeout = 60;
+
+                //Openning Connection
                 Connect.Open();
                 Reader = Command.ExecuteReader();
 
@@ -56,22 +53,50 @@ namespace Email
                     {
                         String[] row = {
                             Reader.GetString(0),
-                            Reader.GetString(1),
+                            Reader.GetString(2),
                             "Me",
-                            Reader.GetString(3),
-                            Reader.GetString(4)
+                            Reader.GetString(4),
+                            Reader.GetString(5)
                         };
                         var listItems = new ListViewItem(row);
                         ListInbox.Items.Add(listItems);
                     }
-                    Connect.Close();
-                }             
-                Connect.Close();                
+                }
+                Connect.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void ListInbox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (ListInbox.SelectedItems.Count == 0)
+            {
+                return;
+            }
+            else if(ListInbox.SelectedItems.Count > 1){
+                
+            }
+            else
+            {
+                ListViewItem items = ListInbox.SelectedItems[0];
+                IDinbox = int.Parse(items.SubItems[0].Text);
+            }
+                    
+        }
+
+        private void ListInbox_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
+        {
+            e.Cancel = true;
+            e.NewWidth = ListInbox.Columns[e.ColumnIndex].Width;
+        }
+
+        private void ListInbox_DoubleClick(object sender, EventArgs e)
+        {
+            ParentMail = (Mail)this.Parent;
+            ParentMail.Detail("Inbox", IDinbox);
         }
     }
 }

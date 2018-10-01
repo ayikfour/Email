@@ -14,11 +14,25 @@ namespace Email
     public partial class Mail : Form 
     {
         private MainForm main;
+        private DetailForm detail;        
+
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                const int CS_DROPSHADOW = 0x20000;
+                CreateParams cp = base.CreateParams;
+                cp.ClassStyle |= CS_DROPSHADOW;
+                return cp;
+            }
+        }
+
         public Mail(MainForm parent)
         {
             InitializeComponent();
-            main = parent;
+            main = parent;            
             CurrentUser.Text = MainForm.Email;
+            
         }
 
         private void BtnCompose_Click(object sender, EventArgs e)
@@ -36,19 +50,18 @@ namespace Email
         private void BtnSent_Click(object sender, EventArgs e)
         {
             sent1.BringToFront();
-
+            sent1.UpdateOutbox();
         }
 
         private void BtnDraft_Click(object sender, EventArgs e)
         {
             draft1.BringToFront();
-
+            draft1.UpdateDraft();
         }
 
         private void BtnBin_Click(object sender, EventArgs e)
         {
-            bin1.BringToFront();
-
+            bin1.BringToFront();            
         }
 
         private void BtnMin_Click(object sender, EventArgs e)
@@ -68,6 +81,21 @@ namespace Email
             main.Show();
             main.FlushData();            
             this.Close();
+        }     
+        
+        public void Detail(String title, int ID)
+        {
+            if(detail == null || detail.IsDisposed)
+            {
+                detail = new DetailForm(title, ID, this);
+                detail.Show();
+                this.Hide();
+            }
+            else
+            {
+                detail.Show();
+                this.Hide();
+            }
         }
     }
 }

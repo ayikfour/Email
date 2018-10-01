@@ -13,9 +13,8 @@ namespace Email
 {
     public partial class RegisterForm : Form
     {
-
-        static String ConnectionInfo = "datasource=localhost; port=3306; username=root; password=; database=mail; SslMode=none";
-        MySqlConnection Connect = new MySqlConnection(ConnectionInfo);
+        //Database Connection
+        MySqlConnection Connect = new MySqlConnection(MainForm.Connection);
         MySqlCommand Command;
         MySqlDataReader Reader;
 
@@ -50,13 +49,21 @@ namespace Email
                 Email = RegMailName.Text;
                 Password = RegPassword.Text;
 
-                String query = "INSERT INTO user (name, mailName, password) VALUES ('" + UserName+ "', '"+Email+"', '"+Password+"')";
+                //Declaring Query
+                String query = "INSERT INTO author (name, mail_name, password) VALUES (@name, @mail, @password)";
                 Command = new MySqlCommand(query, Connect);
+                Command.Parameters.AddWithValue("@name", UserName);
+                Command.Parameters.AddWithValue("@mail", Email);
+                Command.Parameters.AddWithValue("@password", Password);
+
+                //Opening Connection
                 Connect.Open();
                 Reader = Command.ExecuteReader();
+
+                //Closing Connection
                 Connect.Close();
 
-                MessageBox.Show("Register Success!");
+                MessageBox.Show("Registration Success!");
 
             }
             catch(Exception ex)
@@ -67,7 +74,9 @@ namespace Email
 
         private Boolean CheckForm()
         {
-            if(!RegName.Text.Equals("") && !RegMailName.Text.Equals("") && !RegPassword.Text.Equals(""))
+            if(!RegName.Text.Equals("") 
+                && !RegMailName.Text.Equals("") 
+                && !RegPassword.Text.Equals(""))
             {
                 return true;
             }

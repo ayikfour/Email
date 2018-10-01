@@ -64,6 +64,12 @@
     <Compile Include="compose.Designer.cs">
       <DependentUpon>compose.cs</DependentUpon>
     </Compile>
+    <Compile Include="DetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetailForm.Designer.cs">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="draft.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,12 +93,6 @@
     </Compile>
     <Compile Include="inbox.Designer.cs">
       <DependentUpon>inbox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="login.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -129,6 +129,9 @@
     <EmbeddedResource Include="compose.resx">
       <DependentUpon>compose.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DetailForm.resx">
+      <DependentUpon>DetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="draft.resx">
       <DependentUpon>draft.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,9 +143,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="inbox.resx">
       <DependentUpon>inbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
-      <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

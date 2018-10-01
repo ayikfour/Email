@@ -38,12 +38,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtnSend = new System.Windows.Forms.Button();
             this.BtnDraft = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // RtbRecipient
             // 
             this.RtbRecipient.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RtbRecipient.Font = new System.Drawing.Font("Muli ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RtbRecipient.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RtbRecipient.Location = new System.Drawing.Point(113, 28);
             this.RtbRecipient.Multiline = false;
             this.RtbRecipient.Name = "RtbRecipient";
@@ -54,10 +55,10 @@
             // RtbMessage
             // 
             this.RtbMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RtbMessage.Font = new System.Drawing.Font("Muli", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RtbMessage.Location = new System.Drawing.Point(43, 121);
+            this.RtbMessage.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RtbMessage.Location = new System.Drawing.Point(43, 143);
             this.RtbMessage.Name = "RtbMessage";
-            this.RtbMessage.Size = new System.Drawing.Size(538, 202);
+            this.RtbMessage.Size = new System.Drawing.Size(538, 180);
             this.RtbMessage.TabIndex = 0;
             this.RtbMessage.Text = "";
             // 
@@ -72,29 +73,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Muli ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DarkGray;
             this.label1.Location = new System.Drawing.Point(40, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
+            this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 3;
             this.label1.Text = "Recipient :";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Muli ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.DarkGray;
             this.label2.Location = new System.Drawing.Point(40, 75);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 16);
+            this.label2.Size = new System.Drawing.Size(53, 15);
             this.label2.TabIndex = 4;
             this.label2.Text = "Subject :";
             // 
             // RtbSubject
             // 
             this.RtbSubject.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RtbSubject.Font = new System.Drawing.Font("Muli ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RtbSubject.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RtbSubject.Location = new System.Drawing.Point(103, 75);
             this.RtbSubject.Name = "RtbSubject";
             this.RtbSubject.Size = new System.Drawing.Size(260, 20);
@@ -149,11 +150,23 @@
             this.BtnDraft.UseVisualStyleBackColor = false;
             this.BtnDraft.Click += new System.EventHandler(this.BtnDraft_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.DarkGray;
+            this.label3.Location = new System.Drawing.Point(40, 121);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(63, 15);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Message : ";
+            // 
             // compose
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.BtnDraft);
             this.Controls.Add(this.BtnSend);
             this.Controls.Add(this.panel3);
@@ -183,5 +196,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button BtnSend;
         private System.Windows.Forms.Button BtnDraft;
+        private System.Windows.Forms.Label label3;
     }
 }

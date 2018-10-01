@@ -12,6 +12,7 @@ namespace Email
 {
     public partial class MainForm : Form
     {
+        public static String Connection = "datasource=localhost; port=3306; username=root; password=; database=mail; SslMode=none";
         public static Boolean LogedIn = false;
         public static String Email, Pass, Username;
         public static int Id;

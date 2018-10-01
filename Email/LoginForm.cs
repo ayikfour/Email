@@ -18,9 +18,8 @@ namespace Email
         private String Email, Password, UserName;
         private int ID;
 
-        //Database Connection
-        static String ConnectionInfo = "datasource=localhost; port=3306; username=root; password=; database=mail; SslMode=none";
-        MySqlConnection Connect = new MySqlConnection(ConnectionInfo);
+        //Database Connection      
+        MySqlConnection Connect = new MySqlConnection(MainForm.Connection);
         MySqlCommand Command;
         MySqlDataReader Reader;
 
@@ -51,8 +50,13 @@ namespace Email
             Boolean status = false;
             try
             {
-                String query = "SELECT * FROM user WHERE mailName='" + LoginUsername.Text.ToLower() + "'";
+                //Declaring Query
+                String query = "SELECT * FROM author WHERE mail_name=@mail";
                 Command = new MySqlCommand(query, Connect);
+                Command.Parameters.AddWithValue("@mail", LoginUsername.Text);
+                Command.CommandTimeout = 60;
+
+                //Opening Connection            
                 Connect.Open();
                 Reader = Command.ExecuteReader();
                 if (Reader.HasRows)

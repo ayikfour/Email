@@ -145,7 +145,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(93, 217);
+            this.panel3.Location = new System.Drawing.Point(93, 300);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(242, 1);
             this.panel3.TabIndex = 26;
@@ -179,7 +179,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(92, 172);
+            this.label5.Location = new System.Drawing.Point(92, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(61, 15);
             this.label5.TabIndex = 23;
@@ -203,7 +203,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(93, 281);
+            this.panel4.Location = new System.Drawing.Point(93, 226);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(242, 1);
             this.panel4.TabIndex = 29;
@@ -214,7 +214,7 @@
             this.RegMailName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RegMailName.Font = new System.Drawing.Font("Muli ExtraBold", 8.95F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegMailName.ForeColor = System.Drawing.Color.White;
-            this.RegMailName.Location = new System.Drawing.Point(93, 261);
+            this.RegMailName.Location = new System.Drawing.Point(93, 206);
             this.RegMailName.Name = "RegMailName";
             this.RegMailName.Size = new System.Drawing.Size(244, 18);
             this.RegMailName.TabIndex = 30;
@@ -229,7 +229,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Muli", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(92, 236);
+            this.label1.Location = new System.Drawing.Point(92, 181);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 28;
@@ -241,10 +241,10 @@
             this.RegPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RegPassword.Font = new System.Drawing.Font("Muli ExtraBold", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegPassword.ForeColor = System.Drawing.Color.White;
-            this.RegPassword.Location = new System.Drawing.Point(93, 198);
+            this.RegPassword.Location = new System.Drawing.Point(93, 281);
             this.RegPassword.Name = "RegPassword";
             this.RegPassword.PasswordChar = '*';
-            this.RegPassword.Size = new System.Drawing.Size(242, 18);
+            this.RegPassword.Size = new System.Drawing.Size(242, 16);
             this.RegPassword.TabIndex = 31;
             // 
             // RegisterForm

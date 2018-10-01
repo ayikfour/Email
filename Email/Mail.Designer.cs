@@ -31,12 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mail));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnLogout = new System.Windows.Forms.Button();
             this.BtnBin = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnDraft = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnSent = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnInbox = new Bunifu.Framework.UI.BunifuFlatButton();
             this.BtnCompose = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.CurrentUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.bunifuDragControl1 = new Bunifu.Framework.UI.BunifuDragControl(this.components);
@@ -44,13 +46,11 @@
             this.BtnMin = new Bunifu.Framework.UI.BunifuImageButton();
             this.BtnClose = new Bunifu.Framework.UI.BunifuImageButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.BtnLogout = new System.Windows.Forms.Button();
             this.compose1 = new Email.compose();
             this.sent1 = new Email.sent();
             this.inbox1 = new Email.inbox();
             this.draft1 = new Email.draft();
             this.bin1 = new Email.bin();
-            this.CurrentUser = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +73,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(176, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // BtnLogout
+            // 
+            this.BtnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
+            this.BtnLogout.FlatAppearance.BorderSize = 0;
+            this.BtnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnLogout.Font = new System.Drawing.Font("Muli ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnLogout.ForeColor = System.Drawing.Color.White;
+            this.BtnLogout.Location = new System.Drawing.Point(0, 408);
+            this.BtnLogout.Name = "BtnLogout";
+            this.BtnLogout.Size = new System.Drawing.Size(176, 42);
+            this.BtnLogout.TabIndex = 7;
+            this.BtnLogout.Text = "Logout";
+            this.BtnLogout.UseVisualStyleBackColor = false;
+            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
             // 
             // BtnBin
             // 
@@ -270,6 +285,20 @@
             this.panel3.Size = new System.Drawing.Size(176, 53);
             this.panel3.TabIndex = 0;
             // 
+            // CurrentUser
+            // 
+            this.CurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.CurrentUser.AutoSize = true;
+            this.CurrentUser.Font = new System.Drawing.Font("Muli", 6F);
+            this.CurrentUser.ForeColor = System.Drawing.Color.White;
+            this.CurrentUser.Location = new System.Drawing.Point(16, 32);
+            this.CurrentUser.Name = "CurrentUser";
+            this.CurrentUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.CurrentUser.Size = new System.Drawing.Size(57, 11);
+            this.CurrentUser.TabIndex = 4;
+            this.CurrentUser.Text = "lsfldgkljdsflgk";
+            this.CurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -340,21 +369,6 @@
             this.panel4.Size = new System.Drawing.Size(624, 397);
             this.panel4.TabIndex = 1;
             // 
-            // BtnLogout
-            // 
-            this.BtnLogout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(211)))), ((int)(((byte)(47)))), ((int)(((byte)(47)))));
-            this.BtnLogout.FlatAppearance.BorderSize = 0;
-            this.BtnLogout.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnLogout.Font = new System.Drawing.Font("Muli ExtraBold", 8.249999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnLogout.ForeColor = System.Drawing.Color.White;
-            this.BtnLogout.Location = new System.Drawing.Point(0, 408);
-            this.BtnLogout.Name = "BtnLogout";
-            this.BtnLogout.Size = new System.Drawing.Size(176, 42);
-            this.BtnLogout.TabIndex = 7;
-            this.BtnLogout.Text = "Logout";
-            this.BtnLogout.UseVisualStyleBackColor = false;
-            this.BtnLogout.Click += new System.EventHandler(this.BtnLogout_Click);
-            // 
             // compose1
             // 
             this.compose1.BackColor = System.Drawing.Color.White;
@@ -394,20 +408,6 @@
             this.bin1.Name = "bin1";
             this.bin1.Size = new System.Drawing.Size(624, 397);
             this.bin1.TabIndex = 5;
-            // 
-            // CurrentUser
-            // 
-            this.CurrentUser.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CurrentUser.AutoSize = true;
-            this.CurrentUser.Font = new System.Drawing.Font("Muli", 6F);
-            this.CurrentUser.ForeColor = System.Drawing.Color.White;
-            this.CurrentUser.Location = new System.Drawing.Point(16, 32);
-            this.CurrentUser.Name = "CurrentUser";
-            this.CurrentUser.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.CurrentUser.Size = new System.Drawing.Size(57, 11);
-            this.CurrentUser.TabIndex = 4;
-            this.CurrentUser.Text = "lsfldgkljdsflgk";
-            this.CurrentUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Mail
             // 
